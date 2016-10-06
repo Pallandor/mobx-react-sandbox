@@ -1,0 +1,2 @@
+webpackJsonp([2,0,3],[function(e,t,n){"use strict";function l(e){return e&&e.__esModule?e:{"default":e}}var u=n(162),r=l(u),a=n(85),d=l(a),o=function(){return r["default"].createElement("div",null,r["default"].createElement("h1",null,"My Fake Component"))};d["default"].render(r["default"].createElement(o,null),document.getElementById("root"))}]);
+//# sourceMappingURL=app.d478a85560159ddcfc5e.js.map
