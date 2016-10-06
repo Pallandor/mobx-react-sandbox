@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const FakeComponent = () => (
-  <div>
-    <h1>My Fake Component</h1>
-  </div>
-);
+import HomePage from './components/HomePage';
 
 ReactDOM.render(
-  <FakeComponent />,
+  <HomePage count={5} />,
   document.getElementById('root')
 );
