@@ -1,4 +1,4 @@
-import { observable, autorun } from 'mobx';
+import { observable, autorun, computed } from 'mobx';
 
 class ObservableTodoStore {
 	@observable todos = [];
@@ -9,9 +9,7 @@ class ObservableTodoStore {
   }
 
 	@computed get completedTodosCount() {
-  	return this.todos.filter(
-		todo => todo.completed === true
-	).length;
+  	return this.todos.filter(todo => todo.completed).length;
   }
 
 	@computed get report() {
@@ -30,5 +28,4 @@ class ObservableTodoStore {
 	}
 }
 
-const observableTodoStore = new ObservableTodoStore();
-export default observableTodoStore;
+export default ObservableTodoStore;

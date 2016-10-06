@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
 import TodoView from '../TodoView';
 
@@ -21,7 +22,7 @@ class TodoList extends Component {
         <ul>{store.todos.map((todo, idx) => <TodoView todo={todo} key={idx} />)}</ul>
         {store.pendingRequests ? <marquee>Loading...</marquee> : null}
         <button onClick={this.handleAddTodo}>New Todo</button>
-        <small> (double-click a todo to edit)</small>
+        <small>(double-click a todo to edit)</small>
       </div>
     );
   }

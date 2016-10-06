@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
 @observer
 class TodoView extends Component {
@@ -35,7 +36,11 @@ class TodoView extends Component {
 }
 
 TodoView.propTypes = {
-  todo: React.PropTypes.object, // NOTE: Change this, too lax! or back to .any
+  todo: React.PropTypes.shape({
+    task: React.PropTypes.string,
+    completed: React.PropTypes.bool,
+    assignee: React.PropTypes.any,
+  }).isRequired,
 };
 
 export default TodoView;
