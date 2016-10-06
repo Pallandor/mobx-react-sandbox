@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import TodoView from '../TodoView';
-import RenderCounter from '../RenderCounter';
 
+@observer
 class TodoList extends Component {
-  constructor(){
+  constructor() {
     super();
     this.handleAddTodo = this.handleAddTodo.bind(this);
   }
@@ -22,10 +22,13 @@ class TodoList extends Component {
         {store.pendingRequests ? <marquee>Loading...</marquee> : null}
         <button onClick={this.handleAddTodo}>New Todo</button>
         <small> (double-click a todo to edit)</small>
-        <RenderCounter />
       </div>
     );
   }
 }
+
+TodoList.propTypes = {
+  store: React.PropTypes.any,
+};
 
 export default TodoList;

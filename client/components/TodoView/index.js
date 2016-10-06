@@ -1,19 +1,19 @@
-// for stub purposes
 import React, { Component } from 'react';
 
+@observer
 class TodoView extends Component {
-  constructor(){
+  constructor() {
     super();
     this.handleTodoRename = this.handleTodoRename.bind(this);
     this.toggleTodoCompleted = this.toggleTodoCompleted.bind(this);
   }
 
-  handleTodoRename(){
+  handleTodoRename() {
     const todo = this.props.todo;
     todo.task = prompt('Task name', todo.task) || todo.task;
   }
 
-  toggleTodoCompleted(){
+  toggleTodoCompleted() {
     const todo = this.props.todo;
     todo.completed = !todo.completed;
   }
@@ -23,7 +23,7 @@ class TodoView extends Component {
     return (
       <li onDoubleClick={this.handleTodoRename}>
         <input
-          type='checkbox'
+          type="checkbox"
           checked={todo.completed}
           onChange={this.toggleTodoCompleted}
         />
@@ -31,6 +31,7 @@ class TodoView extends Component {
         {todo.assignee ? <small>{todo.assignee.name}</small> : null}
       </li>
     );
+  }
 }
 
 TodoView.propTypes = {
